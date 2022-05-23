@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-cmn">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Input Range</title>
+  <style>
+    .my-range {
+      display: flex;
+      position: relative;
+    }
+    .range-val{
+      position: absolute;
+      top: -12px;
+      left: 50px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="my-range">
+    <div id="min">0</div>
+    <input type="range" id="myRange" min="0" max="10">
+    <div id="max">100</div>
+    <div id="rangeVal" class="range-val"></div>
+  </div>
+
+  <script>
+    const $ = (selector) => document.querySelector(selector);
+
+    const $myRange = $('#myRange');
+    const $rangeVal = $('#rangeVal');
+
+    const setText = (el, val) => {
+      el.textContent = val;
+    };
+
+    const updateVal = (val) => {
+      setText($rangeVal, val);
+    };
+
+
+    const init = ()=>{
+      updateVal($myRange.value);
+      $myRange.addEventListener('input', (e) => {
+        updateVal(e.target.value);
+      });
+
+      setText($('#min'), $myRange.min);
+      setText($('#max'), $myRange.max);
+    };
+
+    init();
+
+  </script>
+</body>
+
+</html>
