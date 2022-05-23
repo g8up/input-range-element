@@ -3,6 +3,9 @@
 
 ![](./snapshot.png)
 
+# Video Tutorial
+- https://mianbaoduo.com/o/bread/Ypqbkpxr
+
 # Docs
 - https://github.com/mdn/web-components-examples
 
